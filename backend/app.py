@@ -5,8 +5,8 @@ from flask_cors import CORS
 from config import Config 
 import os
 
-app = Flask(_name_)
-app.config.from_object(config)
+app = Flask(__name__)
+app.config.from_object(Config)
 
 jwt = JWTManager(app)
 CORS(app)
@@ -23,7 +23,7 @@ app.register_blueprint(sales_bp, url_prefix='/sales')
 app.register_blueprint(expenses_bp, url_prefix='expenses')
 app.register_blueprint(reports_bp, url_prefix='/reports')
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     if not os.path.exists(Config.DATABASE):
         from models import init_db
         init_db()
