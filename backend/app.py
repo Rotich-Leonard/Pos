@@ -20,7 +20,7 @@ from routes.reports import reports_bp
 app.register_blueprint(auth_bp)
 app.register_blueprint(products_bp, url_prefix='/products')
 app.register_blueprint(sales_bp, url_prefix='/sales')
-app.register_blueprint(expenses, url_prefix='expenses')
+app.register_blueprint(expenses_bp, url_prefix='expenses')
 app.register_blueprint(reports_bp, url_prefix='/reports')
 
 if _name_ == '_main_':

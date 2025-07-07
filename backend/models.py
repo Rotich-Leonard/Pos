@@ -35,7 +35,7 @@ def init_db():
            payment_type TEXT,
            trans_date TEXT,
          )""")
-         cur.execute("""
+        cur.execute("""
         CREATE TABLE expenses (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             description TEXT,
